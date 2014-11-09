@@ -9,19 +9,19 @@ import java.util.Date;
  */
 public class Item {
 
-    public long itemId;
+    private long itemId;
 
-    public Category category;
+    private Category category;
 
-    public String name;
+    private String name;
 
-    public String imageId;
+    private String imageId;
 
-    public String imageUrl;
+    private String imageUrl;
 
-    public Date lastWorn;
+    private Date lastWorn;
 
-    public int timesWorn;
+    private int timesWorn;
 
     public long getItemId() {
         return itemId;

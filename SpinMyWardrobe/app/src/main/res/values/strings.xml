@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Spin My Wardrobe</string>
+    <string name="app_name">Spin My Closet</string>
     <string name="title_activity_signup">SignupActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -19,5 +19,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_calendar">Calendar</string>
     <string name="title_activity_camera">Camera</string>
-
+    <string name="title_activity_calendar_day">CalendarDayActivity</string>
+    <string name="shared_preference_file">spin_my_wardrobe_shared_preferences</string>
 </resources>

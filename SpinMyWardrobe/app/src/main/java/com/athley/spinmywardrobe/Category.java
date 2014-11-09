@@ -5,12 +5,12 @@ package com.athley.spinmywardrobe;
  */
 public enum Category {
 
-    Formals(1),
-    Casuals(2),
+    Formal(1),
+    Casual(2),
     Party(3),
     Ethnic(4),
     Shoes(5),
-    Accessories(6);
+    Accessory(6);
 
     private int numVal;
     

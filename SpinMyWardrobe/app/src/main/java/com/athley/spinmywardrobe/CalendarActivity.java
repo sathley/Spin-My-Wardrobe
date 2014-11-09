@@ -2,6 +2,8 @@ package com.athley.spinmywardrobe;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,11 +28,13 @@ public class CalendarActivity extends Activity {
         setContentView(R.layout.activity_calendar);
         ButterKnife.inject(this);
         mContext = this;
-
         mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView calendarView, int year, int month, int day) {
-                Toast.makeText(mContext, day + "/" + month + "/" + year, Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, day + "/" + String.valueOf(month + 1) + "/" + year, Toast.LENGTH_SHORT).show();
+                Intent dayIntent = new Intent(mContext, CalendarDayActivity.class);
+                dayIntent.putExtra("date", String.valueOf(year) + String.valueOf(month+1) + String.valueOf(day) );
+                startActivity(dayIntent);
             }
         });
     }
@@ -38,22 +42,11 @@ public class CalendarActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_calendar, menu);
         return true;}
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 }

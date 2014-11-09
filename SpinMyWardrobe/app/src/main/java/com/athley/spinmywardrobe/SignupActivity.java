@@ -41,8 +41,8 @@ public class SignupActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+        setContentView(R.layout.activity_signup);
         mContext = this;
         ButterKnife.inject(this);
         mSignup.setOnClickListener(signupCLickListener);

@@ -88,7 +88,7 @@
     <orderEntry type="library" exported="" name="appacitive-android-1.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-21.0.0" level="project" />
     <orderEntry type="library" exported="" name="butterknife-6.0.0" level="project" />
-    <orderEntry type="library" exported="" name="android-times-square-1.4.1" level="project" />
+    <orderEntry type="library" exported="" name="joda-time-2.5" level="project" />
     <orderEntry type="library" exported="" name="play-services-6.1.71" level="project" />
   </component>
 </module>

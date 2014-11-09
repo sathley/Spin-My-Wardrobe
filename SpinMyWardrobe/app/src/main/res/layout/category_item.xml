@@ -13,12 +13,11 @@
         android:layout_margin="10dp"
         android:minHeight="80dp"
         android:minWidth="80dp"
-        android:src="@drawable/placeholder" />
+        android:src="@drawable/logo" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0 times worn"
         android:id="@+id/category_item_times_worn"
         android:layout_toEndOf="@+id/category_item_image"
         android:layout_alignTop="@+id/category_item_image"
@@ -30,11 +29,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Last worn Sep 21"
         android:id="@+id/category_item_last_worn"
         android:layout_below="@+id/category_item_times_worn"
         android:layout_toEndOf="@+id/category_item_image"
         android:textStyle="italic"
         android:textColor="@android:color/darker_gray"
         android:layout_marginLeft="30dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/category_add"
+        android:layout_alignBottom="@+id/category_item_image"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/plus"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="15dp" />
 </RelativeLayout>

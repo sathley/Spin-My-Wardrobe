@@ -20,7 +20,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -103,12 +102,12 @@ public class NavigationDrawerFragment extends Fragment {
                 android.R.id.text1,
                 new String[]{
                         getString(R.string.title_home),
-                        Category.Formals.toString(),
-                        Category.Casuals.toString(),
+                        Category.Formal.toString(),
+                        Category.Casual.toString(),
                         Category.Party.toString(),
                         Category.Ethnic.toString(),
                         Category.Shoes.toString(),
-                        Category.Accessories.toString()
+                        Category.Accessory.toString()
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;

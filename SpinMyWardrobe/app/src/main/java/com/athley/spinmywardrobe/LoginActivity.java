@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -63,8 +64,8 @@ public class LoginActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+        setContentView(R.layout.activity_login);
         AppacitiveContext.initialize("q8lSlsEZgOwsEK0FknL6Y0TMbIGo02ShAe8mkZu3k1Q=", Environment.sandbox, this);
         ButterKnife.inject(this);
         mContext = this;
@@ -103,8 +104,11 @@ public class LoginActivity extends Activity {
                 public void success(AppacitiveUser result) {
                     setProgressBarIndeterminateVisibility(false);
                     Toast.makeText(mContext, "Welcome " + result.getFirstName(), Toast.LENGTH_LONG).show();
+                    SharedPreferences preferences = mContext.getSharedPreferences(getString(R.string.shared_preference_file), Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putLong("user_id", result.getId());
+                    editor.commit();
                     Intent mainIntent = new Intent(mContext, MainActivity.class);
-                    mainIntent.putExtra("user_id", result.getId());
                     startActivity(mainIntent);
                 }
 

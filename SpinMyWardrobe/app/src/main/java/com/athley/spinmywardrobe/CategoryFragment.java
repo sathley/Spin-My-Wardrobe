@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.athley.spinmywardrobe.adapters.ItemAdapter;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -20,17 +22,14 @@ public class CategoryFragment extends Fragment {
 
     private Category mCategory;
 
-    private long mUserId;
-
     @InjectView(R.id.category_listview)
     ListView mListView;
 
     ItemAdapter mAdapter;
 
-    public static CategoryFragment newInstance(Category category, long userId) {
+    public static CategoryFragment newInstance(Category category) {
         CategoryFragment fragment = new CategoryFragment();
         fragment.mCategory = category;
-        fragment.mUserId = userId;
         return fragment;
     }
 
@@ -44,7 +43,7 @@ public class CategoryFragment extends Fragment {
         ButterKnife.inject(this, rootView);
         getActivity().getActionBar().setTitle(mCategory.toString());
 
-        mAdapter = new ItemAdapter(getActivity(), mUserId, mCategory);
+        mAdapter = new ItemAdapter(getActivity(), mCategory);
         mListView.setAdapter(mAdapter);
         return rootView;
     }
