@@ -3,8 +3,10 @@
     package="com.athley.spinmywardrobe" >
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-feature android:name="android.hardware.camera"
-        android:required="true" />
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,7 +16,6 @@
         <activity
             android:name="com.athley.spinmywardrobe.LoginActivity"
             android:label="@string/app_name" >
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -52,10 +53,10 @@
         <activity
             android:name="com.athley.spinmywardrobe.CalendarDayActivity"
             android:label="@string/title_activity_calendar_day"
-            android:parentActivityName="com.athley.spinmywardrobe.CalendarActivity" >
+            android:parentActivityName="com.athley.spinmywardrobe.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.athley.spinmywardrobe.CalendarActivity" />
+                android:value="com.athley.spinmywardrobe.MainActivity" />
         </activity>
     </application>
 

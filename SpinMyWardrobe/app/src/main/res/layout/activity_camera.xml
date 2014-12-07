@@ -7,36 +7,48 @@
     tools:context="com.athley.spinmywardrobe.CameraActivity">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:id="@+id/camera_preview"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/logo" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/category_spinner"
-        android:layout_below="@+id/camera_preview"
-        android:layout_centerHorizontal="true"
-        android:spinnerMode="dropdown" />
+        android:src="@drawable/logo"
+        android:layout_above="@+id/camera_image_name"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/camera_image_name" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Confirm"
         android:id="@+id/camera_confirm"
-        android:layout_below="@+id/category_spinner"
+        android:layout_above="@+id/camera_deny"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignEnd="@+id/category_spinner" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Deny"
         android:id="@+id/camera_deny"
-        android:layout_below="@+id/camera_confirm"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignEnd="@+id/camera_confirm" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/camera_image_name"
+        android:hint="Enter a name for this item"
+        android:layout_above="@+id/category_spinner"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/category_spinner" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/category_spinner"
+        android:spinnerMode="dropdown"
+        android:layout_above="@+id/camera_confirm"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

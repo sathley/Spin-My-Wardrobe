@@ -18,13 +18,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/category_item_times_worn"
+        android:id="@+id/category_item_name"
         android:layout_toEndOf="@+id/category_item_image"
         android:layout_alignTop="@+id/category_item_image"
         android:textStyle="bold"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/category_item_times_worn"
+        android:textStyle="bold"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/category_item_name"
+        android:layout_toEndOf="@+id/category_item_image" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,14 +46,24 @@
         android:layout_marginLeft="30dp" />
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:id="@+id/category_add"
-        android:layout_alignBottom="@+id/category_item_image"
-        android:layout_alignParentEnd="true"
-        android:src="@drawable/plus"
+        android:src="@drawable/calendar_add"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="15dp" />
+        android:layout_alignBottom="@+id/category_item_image"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="15dp" />
+
+    <ImageButton
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/category_delete"
+        android:layout_alignTop="@+id/category_add"
+        android:layout_toStartOf="@+id/category_add"
+        android:src="@drawable/deleteicon"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY" />
 </RelativeLayout>

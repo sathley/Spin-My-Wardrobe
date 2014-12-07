@@ -53,6 +53,4 @@ public class CategoryFragment extends Fragment {
         super.onAttach(activity);
 
     }
-
-
 }

@@ -2,10 +2,9 @@
 <resources>
 
     <string name="app_name">Spin My Closet</string>
-    <string name="title_activity_signup">SignupActivity</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_signup">Signup</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">Home</string>
     <string name="title_home">Home</string>
     <string name="title_formals">Formals</string>
     <string name="title_casuals">Casuals</string>
@@ -15,8 +14,6 @@
     <string name="title_accessories">Accessories</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_example">Example action</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_calendar">Calendar</string>
     <string name="title_activity_camera">Camera</string>
     <string name="title_activity_calendar_day">CalendarDayActivity</string>

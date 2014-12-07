@@ -28,8 +28,6 @@ public class MainActivity extends Activity
 
     private NavigationDrawerFragment mNavigationDrawerFragment;
 
-    static final int REQUEST_IMAGE_CAPTURE = 1;
-
     private CharSequence mTitle;
 
     @Override
@@ -94,10 +92,6 @@ public class MainActivity extends Activity
     }
 
     public void restoreActionBar() {
-        ActionBar actionBar = getActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-//        actionBar.setDisplayShowTitleEnabled(true);
-//        actionBar.setTitle(mTitle);
     }
 
 

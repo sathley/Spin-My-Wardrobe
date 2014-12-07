@@ -75,8 +75,10 @@ public class ItemAdapter extends BaseAdapter {
         final ImageView photo = (ImageView) itemView.findViewById(R.id.category_item_image);
         TextView timesWorn = (TextView) itemView.findViewById(R.id.category_item_times_worn);
         TextView lastWorn = (TextView) itemView.findViewById(R.id.category_item_last_worn);
+        TextView name = (TextView) itemView.findViewById(R.id.category_item_name);
         SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, dd MMM yyyy");
         final Item item = getItem(i);
+        name.setText(item.getName());
         if(item.getLastWorn() == null)
             timesWorn.setText("Never worn before");
         else
@@ -106,11 +108,19 @@ public class ItemAdapter extends BaseAdapter {
             }
         });
 
+        ImageButton delete = (ImageButton) itemView.findViewById(R.id.category_delete);
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         AppacitiveFile.getDownloadUrlInBackground(item.getImageId(), -1, new Callback<String>() {
             @Override
             public void success(String result) {
                 Picasso.with(mContext)
-                        .load(result)
+                        .load(result).centerCrop().fit().placeholder(R.drawable.logo)
                         .into(photo);
             }
         });
@@ -122,7 +132,7 @@ public class ItemAdapter extends BaseAdapter {
     {
         BatchCallRequest request = new BatchCallRequest();
         AppacitiveObject wore = new AppacitiveObject("wore_" + mCategory.toString());
-        wore.setDateProperty("wore_date", date);
+        wore.setDateTimeProperty("wore_date", date);
         request.addNode(wore, "wore");
 
         AppacitiveConnection woreItem = new AppacitiveConnection("wore_" + mCategory.toString() + "_item");
@@ -138,7 +148,6 @@ public class ItemAdapter extends BaseAdapter {
             @Override
             public void success(BatchCallResponse result) {
                 Toast.makeText(mContext, "Item added successfully!", Toast.LENGTH_LONG).show();
-                notifyDataSetChanged();
             }
 
             @Override
@@ -167,7 +176,7 @@ public class ItemAdapter extends BaseAdapter {
                     myItem.setTimesWorn(item.getChildren("wore").size());
                     if(item.getChildren("wore").size() > 0)
                     {
-                        myItem.setLastWorn(item.getChildren("wore").get(0).object.getPropertyAsDate("wore_date"));
+                        myItem.setLastWorn(item.getChildren("wore").get(0).object.getPropertyAsDateTime("wore_date"));
                     }
                     else myItem.setLastWorn(null);
 
